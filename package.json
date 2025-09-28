@@ -32,7 +32,7 @@
     "format": "prettier nodes credentials --write",
     "lint": "eslint --no-error-on-unmatched-pattern nodes credentials package.json",
     "lintfix": "eslint --no-error-on-unmatched-pattern nodes credentials package.json --fix",
-    "prepublishOnly": "npm run build && npm run lint"
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "dist"

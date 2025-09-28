@@ -1,0 +1,59 @@
+{
+  "name": "n8n-nodes-better-ffmpeg",
+  "version": "0.2.1",
+  "description": "FFmpeg community node for n8n",
+  "keywords": [
+    "n8n-community-node-package",
+    "ffmpeg",
+    "audio",
+    "video",
+    "media"
+  ],
+  "license": "MIT",
+  "homepage": "https://seifjackson.com",
+  "author": {
+    "name": "Seif Jackson",
+    "email": "seif@nazamly.com",
+    "url": "https://seifjackson.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seifjackson/n8n-nodes-better-ffmpeg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seifjackson/n8n-nodes-better-ffmpeg/issues"
+  },
+  "engines": {
+    "node": ">=20.15"
+  },
+  "scripts": {
+    "build": "npx rimraf dist && tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint --no-error-on-unmatched-pattern nodes credentials package.json",
+    "lintfix": "eslint --no-error-on-unmatched-pattern nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [],
+    "nodes": [
+      "dist/nodes/Ffmpeg/Ffmpeg.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.11",
+    "@typescript-eslint/parser": "~8.32.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.3",
+    "gulp": "^5.0.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

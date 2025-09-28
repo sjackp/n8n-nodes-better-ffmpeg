@@ -1,0 +1,13 @@
+{
+    "node": "n8n-nodes-better-ffmpeg.betterFfmpeg",
+    "nodeVersion": "3.0",
+    "codexVersion": "1.0",
+    "categories": ["Media", "Audio", "Video", "Utilities"],
+    "resources": {
+        "primaryDocumentation": [
+            { "url": "https://ffmpeg.org/ffmpeg.html" }
+        ]
+    }
+}
+
+

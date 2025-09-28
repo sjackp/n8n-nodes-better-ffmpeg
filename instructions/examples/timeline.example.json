@@ -1,0 +1,13 @@
+{
+  "inputs": { "video": "C:/media/source.mp4", "audio": null },
+  "actions": [
+    { "type": "segment", "label": "intro", "start": 0.0, "end": 12.37 },
+    { "type": "exclude", "start": 24.1, "end": 28.9 },
+    { "type": "segment", "label": "best_take", "start": 33.0, "end": 54.25 },
+    { "type": "speed", "start": 120.0, "end": 160.0, "factor": 4.0 },
+    { "type": "overlay", "start": 210.0, "end": 238.0, "asset": "C:/media/logo.png", "position": "tr", "x": 10, "y": 10, "opacity": 0.8, "w": 320, "h": 0 },
+    { "type": "mute", "start": 300.0, "end": 307.5 }
+  ]
+}
+
+

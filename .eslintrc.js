@@ -1,0 +1,106 @@
+/**
+ * @type {import('@types/eslint').ESLint.ConfigData}
+ */
+module.exports = {
+	root: true,
+
+	env: {
+		browser: true,
+		es6: true,
+		node: true,
+	},
+
+	parser: '@typescript-eslint/parser',
+
+	parserOptions: {
+		project: ['./tsconfig.json'],
+		sourceType: 'module',
+		extraFileExtensions: ['.json'],
+	},
+
+	ignorePatterns: ['.eslintrc.js', '**/*.js', '**/node_modules/**', '**/dist/**'],
+
+	overrides: [
+		{
+			files: ['package.json'],
+			plugins: ['eslint-plugin-n8n-nodes-base'],
+			extends: ['plugin:n8n-nodes-base/community'],
+			rules: {
+				'n8n-nodes-base/community-package-json-name-still-default': 'off',
+			},
+		},
+		{
+			files: ['./credentials/**/*.ts'],
+			plugins: ['eslint-plugin-n8n-nodes-base'],
+			extends: ['plugin:n8n-nodes-base/credentials'],
+			rules: {
+				'n8n-nodes-base/cred-class-field-authenticate-type-assertion': 'error',
+				'n8n-nodes-base/cred-class-field-display-name-missing-oauth2': 'error',
+				'n8n-nodes-base/cred-class-field-display-name-miscased': 'error',
+				'n8n-nodes-base/cred-class-field-documentation-url-missing': 'error',
+				'n8n-nodes-base/cred-class-field-documentation-url-miscased': 'off',
+				'n8n-nodes-base/cred-class-field-name-missing-oauth2': 'error',
+				'n8n-nodes-base/cred-class-field-name-unsuffixed': 'error',
+				'n8n-nodes-base/cred-class-field-name-uppercase-first-char': 'error',
+				'n8n-nodes-base/cred-class-field-properties-assertion': 'error',
+				'n8n-nodes-base/cred-class-name-missing-oauth2-suffix': 'error',
+				'n8n-nodes-base/cred-class-name-unsuffixed': 'error',
+				'n8n-nodes-base/cred-filename-against-convention': 'error',
+			},
+		},
+		{
+			files: ['./nodes/**/*.ts'],
+			plugins: ['eslint-plugin-n8n-nodes-base'],
+			extends: ['plugin:n8n-nodes-base/nodes'],
+			rules: {
+				'n8n-nodes-base/node-class-description-credentials-name-unsuffixed': 'error',
+				'n8n-nodes-base/node-class-description-display-name-unsuffixed-trigger-node': 'error',
+				'n8n-nodes-base/node-class-description-empty-string': 'error',
+				'n8n-nodes-base/node-class-description-icon-not-svg': 'error',
+				'n8n-nodes-base/node-class-description-inputs-wrong-regular-node': 'off',
+				'n8n-nodes-base/node-class-description-inputs-wrong-trigger-node': 'error',
+				'n8n-nodes-base/node-class-description-missing-subtitle': 'error',
+				'n8n-nodes-base/node-class-description-non-core-color-present': 'error',
+				'n8n-nodes-base/node-class-description-name-miscased': 'error',
+				'n8n-nodes-base/node-class-description-name-unsuffixed-trigger-node': 'error',
+				'n8n-nodes-base/node-class-description-outputs-wrong': 'off',
+				'n8n-nodes-base/node-dirname-against-convention': 'error',
+				'n8n-nodes-base/node-execute-block-double-assertion-for-items': 'error',
+				'n8n-nodes-base/node-execute-block-wrong-error-thrown': 'error',
+				'n8n-nodes-base/node-filename-against-convention': 'error',
+				'n8n-nodes-base/node-param-array-type-assertion': 'error',
+				'n8n-nodes-base/node-param-color-type-unused': 'error',
+				'n8n-nodes-base/node-param-default-missing': 'error',
+				'n8n-nodes-base/node-param-default-wrong-for-boolean': 'error',
+				'n8n-nodes-base/node-param-default-wrong-for-collection': 'error',
+				'n8n-nodes-base/node-param-default-wrong-for-fixed-collection': 'error',
+				'n8n-nodes-base/node-param-default-wrong-for-multi-options': 'error',
+				'n8n-nodes-base/node-param-default-wrong-for-number': 'error',
+				'n8n-nodes-base/node-param-default-wrong-for-simplify': 'error',
+				'n8n-nodes-base/node-param-default-wrong-for-string': 'error',
+				'n8n-nodes-base/node-param-description-boolean-without-whether': 'error',
+				'n8n-nodes-base/node-param-description-comma-separated-hyphen': 'error',
+				'n8n-nodes-base/node-param-description-empty-string': 'error',
+				'n8n-nodes-base/node-param-description-excess-final-period': 'error',
+				'n8n-nodes-base/node-param-description-excess-inner-whitespace': 'error',
+				'n8n-nodes-base/node-param-description-identical-to-display-name': 'error',
+				'n8n-nodes-base/node-param-description-line-break-html-tag': 'error',
+				'n8n-nodes-base/node-param-description-lowercase-first-char': 'error',
+				'n8n-nodes-base/node-param-description-miscased-id': 'error',
+				'n8n-nodes-base/node-param-description-miscased-json': 'error',
+				'n8n-nodes-base/node-param-description-miscased-url': 'error',
+				'n8n-nodes-base/node-param-description-missing-final-period': 'error',
+				'n8n-nodes-base/node-param-description-missing-for-ignore-ssl-issues': 'error',
+				'n8n-nodes-base/node-param-description-missing-for-return-all': 'error',
+				'n8n-nodes-base/node-param-description-missing-for-simplify': 'error',
+				'n8n-nodes-base/node-param-description-missing-from-dynamic-multi-options': 'error',
+				'n8n-nodes-base/node-param-description-missing-from-dynamic-options': 'error',
+				'n8n-nodes-base/node-param-description-missing-from-limit': 'error',
+				'n8n-nodes-base/node-param-type-options-missing-from-limit': 'error',
+				'n8n-nodes-base/node-param-type-options-password-missing': 'error',
+			},
+		},
+	],
+};
+
+
